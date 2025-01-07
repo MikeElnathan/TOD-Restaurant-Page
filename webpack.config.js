@@ -5,7 +5,7 @@ const path = require("path");
 const { EvalDevToolModulePlugin } = require("webpack");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/index.js",
   output: {
     filename: "main.js",
@@ -33,6 +33,10 @@ module.exports = {
         },
         {
             test: /\.(png|svg|jpg|gif|jpeg)$/i,
+            type: "asset/resource",
+        },
+        {
+            test: /\.(woff|woff2|eot|ttf|otf)$/i,
             type: "asset/resource",
         },
     ],
